@@ -54,28 +54,24 @@ function recursionReverse(arr, N) {
 //     create an array.
 
 function reversing(obj) {
-    let values = Object.values(obj);
-    let keys = Object.keys(obj);
-    let result = {}
+    const values = Object.values(obj);
+    const keys = Object.keys(obj);
+    const result = {}
+    
     values.forEach(function (value, index) {
           if (!result.hasOwnProperty(value)) {
             result[value] = keys[index]
         } else {
-            let tmp = [];
             if (Array.isArray(result[value])) {
-                tmp = [keys[index].concat(',').concat(result[value])];
-                result[value] = tmp;
+                result[value].push(keys[index]);
             } else {
-                tmp.push(result[value]);
-                tmp.push(keys[index]);
-                result[value] = tmp;
+                result[value] = [result[value], keys[index]];
             }
         }
 
     });
     return result
 }
-
 
 // 5. Given the list of the following readers:
 // sorting([
