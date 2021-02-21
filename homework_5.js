@@ -1,15 +1,15 @@
 //1. Create a function that builds a tree like object given an array with object which
 // contains parent and id properties.
 //mi qich durs chi galis, bayc stacvec vonc vor.
-
-function objectById (tree, parent) {debugger
-     if(tree.hasOwnProperty(`${parent}`)){
-         return tree[parent];
- }
-	for(let prop in tree){
-  	    return objectById (tree[prop], parent)
-  }
-}
+const arr = [
+    {parent:null,id:0},
+    {parent:0,id:1},
+    {parent:0,id:2},
+    {parent:1,id:3},
+    {parent:1,id:4},
+    {parent:2,id:5},
+    {parent:4,id:6}
+]
 
 function treeFromArr (items) {debugger
 	const tree = {};
@@ -26,6 +26,14 @@ function treeFromArr (items) {debugger
 	return tree;
 }
 
+function objectById (tree, parent) {debugger
+     if(tree.hasOwnProperty(`${parent}`)){
+         return tree[parent];
+ }
+	for(let prop in tree){
+  	    return objectById (tree[prop], parent)
+  }
+}
 
 // 2. Write a JavaScript function to get all possible subsets of given length of the given array.
 // Assume that all elements in the array are unique.
