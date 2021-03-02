@@ -1,5 +1,4 @@
-// 1.
-// Create an Author class and a Book class.
+// 1. Create an Author class and a Book class.
 // Author should have: name, email, gender.
 // It should have appropriate getters and setters.
 // It should have a toString method.
